@@ -9,13 +9,14 @@ use net_os::println;
 
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
-    println!("exception!");
+    println!("run...");
 
     net_os::init();
 
     #[cfg(test)]
     test_main();
 
+    println!("didn't crash");
     loop {}
 }
 
