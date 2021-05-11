@@ -9,7 +9,9 @@ use net_os::println;
 
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
-    println!("Hello World{}", "!");
+    println!("exception!");
+
+    net_os::init();
 
     #[cfg(test)]
     test_main();
