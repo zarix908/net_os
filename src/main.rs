@@ -17,7 +17,7 @@ pub extern "C" fn _start() -> ! {
     test_main();
 
     println!("didn't crash");
-    loop {}
+    net_os::hlt_loop();
 }
 
 /// This function is called on panic.
@@ -25,7 +25,7 @@ pub extern "C" fn _start() -> ! {
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
     println!("{}", info);
-    loop {}
+    net_os::hlt_loop();
 }
 
 #[cfg(test)]
